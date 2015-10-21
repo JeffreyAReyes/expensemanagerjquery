@@ -1,17 +1,9 @@
 
 
-<?PHP
-session_start();
-
-//echo "<h3> PHP List All Session Variables</h3>";
-//    foreach ($_SESSION as $key=>$val)
-//    echo $key." ".$val."<br/>";
-	
-if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-	header ("Location: index.php");
-}
-
+<?php 
+	require 'includes/sessionchecker.php';	
 ?>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
