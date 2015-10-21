@@ -13,7 +13,6 @@ $Data = ($_REQUEST['JsonData']);
 // decode JSON string to PHP object, 2nd param sets to associative array
 $decoded = json_decode($Data,true);
 
-//$value;
 
 require('fpdf.php');
 
@@ -99,28 +98,28 @@ function BasicTable($header,$decoded)
 	}
 	
 	function subWrite($h, $txt, $link='', $subFontSize=12, $subOffset=0)
-{
-    // resize font
-    $subFontSizeold = $this->FontSizePt;
-    $this->SetFontSize($subFontSize);
-    
-    // reposition y
-    $subOffset = ((($subFontSize - $subFontSizeold) / $this->k) * 0.3) + ($subOffset / $this->k);
-    $subX        = $this->x;
-    $subY        = $this->y;
-    $this->SetXY($subX, $subY - $subOffset);
+		{
+			// resize font
+			$subFontSizeold = $this->FontSizePt;
+			$this->SetFontSize($subFontSize);
+			
+			// reposition y
+			$subOffset = ((($subFontSize - $subFontSizeold) / $this->k) * 0.3) + ($subOffset / $this->k);
+			$subX        = $this->x;
+			$subY        = $this->y;
+			$this->SetXY($subX, $subY - $subOffset);
 
-    //Output text
-    $this->Write($h, $txt, $link);
+			//Output text
+			$this->Write($h, $txt, $link);
 
-    // restore y position
-    $subX        = $this->x;
-    $subY        = $this->y;
-    $this->SetXY($subX,  $subY + $subOffset);
+			// restore y position
+			$subX        = $this->x;
+			$subY        = $this->y;
+			$this->SetXY($subX,  $subY + $subOffset);
 
-    // restore font size
-    $this->SetFontSize($subFontSizeold);
-}
+			// restore font size
+			$this->SetFontSize($subFontSizeold);
+		}
 
 }
 
@@ -154,7 +153,7 @@ $pdf->Cell(0,4,$ReportTitle,0,1,'C');
 $pdf->Cell(0,4,"As Of: " . $dt,0,1,'C');
 $pdf->Cell(0,4,'--------------------------------------------------------------------------------------------------------------------------------------------------------------------------',0,1,'C');
 $pdf->BasicTable($header,$decoded);
-//$pdf->Footer();
+
 $pdf->Output();
 
 ?>
