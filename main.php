@@ -27,8 +27,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 	<script type="text/javascript" src="jsfiles/misc_procs.js"></script>
 </head>
 
-<body>
-	<div class="easyui-layout">
+<body class="easyui-layout">
 		<div region="north" border="false" class="rtitle">
 			Expense Manager
 		</div>
@@ -37,7 +36,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 			<h2>Expense Manager</h2>
 			<h1>WELCOME, <?php echo $_SESSION['fname'];?></h1>        
 		</div>
-    </div>   
+     
     <div class="easyui-panel" style="padding:5px;width:100%">
         <a href="main.php" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-home'">Home</a>
 		<a href="#" class="easyui-menubutton" data-options="menu:'#mmsystem',iconCls:'icon-setup'">System</a>
