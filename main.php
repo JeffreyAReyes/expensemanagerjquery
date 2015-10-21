@@ -141,12 +141,6 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 	
 	<script>
 
-		$( 'TodayIncome' ).dblclick(function() {
-			alert( "Hello World!" );
-		});
-		
-		
-		
 	</script>
 
 	<style type="text/css">
