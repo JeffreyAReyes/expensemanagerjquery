@@ -10,7 +10,7 @@
     <script type="text/javascript" src="../jsfiles/jquery.easyui.min.js"></script>
 </head>
 
-<body  >
+<body>
 	
 	<h2>Expense Manager (Report: Income-Expense)</h2>	
 	<p>Not loaded yet.</p>	
@@ -25,8 +25,8 @@
 			
 	<table id="dg" title="Income-Expense Details" class="easyui-datagrid" style="width:100%;height:80%;padding:10px;"
 			rownumbers="true" fitColumns="true" singleSelect="true"
-			toolbar="#toolbar" data-options="onLoadSuccess:function(){addTotal()}""					
-			>
+			toolbar="#toolbar" data-options="onLoadSuccess:function(){addTotal()}"	>				
+			
 		<thead>
 			<tr>
 

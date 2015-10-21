@@ -45,7 +45,7 @@
 			url:"../phpfiles/get_income_expense.php?StartDate=" + firstday + "&EndDate=" + today});
 	  
 			//refreshDatagrid ();
-			 //$( "p" ).text( "The DOM is now loaded and can be manipulated." );
+			 $( "p" ).text( "The DOM is now loaded and can be manipulated." );
 			//$( window ).load( addTotal );
 		});
 						
@@ -126,7 +126,7 @@
 				totalSum=totalSum + parseFloat(rows[i].Amount);
 				totalExpense=totalExpense + parseFloat(rows[i].ExpenseAmount);
 				}
-			alert (rows.length + totalSum);
+			//alert (rows.length + totalSum);
 			
 			$('#dg').datagrid('appendRow',{
 			CatID: '',
