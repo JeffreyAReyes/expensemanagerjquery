@@ -88,22 +88,28 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 					
 					<div class="fitem">
 						<label>Today's Income:</label>
-						<input name="TodayIncome"   id="TodayIncome" class="easyui-numberbox" value="0"  data-options="precision:2,readonly:true">
+						<input name="TodayIncome"   id="TodayIncome" class="easyui-numberbox" value="0"  data-options="precision:2,readonly:true">						
+						<a href="views/income_expense.php" class="easyui-linkbutton" >Details</a>
 						<label>Month-to-Date Income:</label>
 						<input name="MonthIncome"  id="MonthIncome" class="easyui-numberbox" value="0"  data-options="precision:2,groupSeparator:',',readonly:true">
+						<a href="views/income_expense.php" class="easyui-linkbutton" >Details</a>
 						<label>Year-to-Date Income:</label>
 						<input name="YearIncome"  id="YearIncome"  class="easyui-numberbox" value="0"  data-options="precision:2,readonly:true">
+						<a href="views/income_expense.php" class="easyui-linkbutton" >Details</a>
 					</div>
 				</div>
 				<div class="easyui-panel" title="Expense" style="width:100%;height:45%;background:#fafafa;padding:5px">
 				
 					<div class="fitem">
-						<label>Today's Expense:</label>
+						<label >Today's Expense:</label>
 						<input name="TodayExpense"  id="TodayExpense"  class="easyui-numberbox" value="0"  data-options="min:0,precision:2,readonly:true">
+						<a href="views/income_expense.php" class="easyui-linkbutton" >Details</a>
 						<label>Month-to-Date Expense:</label>
 						<input name="MonthExpense"   id="MonthExpense" class="easyui-numberbox" value="0"  data-options="min:0,precision:2,readonly:true">
+						<a href="views/income_expense.php" class="easyui-linkbutton" >Details</a>
 						<label>Year-to-Date Expense:</label>
 						<input name="YearExpense"   id="YearExpense" class="easyui-numberbox" value="0"  data-options="min:0,precision:2,readonly:true">
+						<a href="views/income_expense.php" class="easyui-linkbutton" >Details</a>
 					</div>
 				</div>
 			</div>
@@ -111,7 +117,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 				
 			</div>
 			<div data-options="region:'center'" style="width:35%">
-				<table id="dg" title="Banks" class="easyui-datagrid" style="width:100%;height:100%"
+				<table id="dg" title="Bank Accounts" class="easyui-datagrid" style="width:100%;height:100%"
 					url="phpfiles/get_data_no_params.php?sql_query=GetBankAccounts()" 
 					toolbar="#toolbar" fitColumns="true" singleSelect="true">
 					<thead>
@@ -127,6 +133,16 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 			</div>
 		</div>
     </div>
+	
+	<script>
+
+		$( 'TodayIncome' ).dblclick(function() {
+			alert( "Hello World!" );
+		});
+		
+		
+		
+	</script>
 
 	<style type="text/css">
 		#fm{
@@ -149,7 +165,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 			font-size:14px;
 		}
 		.fitem input{
-			width:200px;
+			width:150px;
 			font-size:14px;
 		}
 				
