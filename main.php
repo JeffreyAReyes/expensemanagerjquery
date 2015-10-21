@@ -29,7 +29,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 <body>
 	<div class="easyui-panel" style="padding:5px;width:100%;background:#fafafa;">
 		<h2>Expense Manager</h2>
-		<p>WELCOME, $_SESSION['fname']</p>        
+		<h1>WELCOME, <?php echo $_SESSION['fname'];?></h1>        
     </div>
        
     <div class="easyui-panel" style="padding:5px;width:100%">
@@ -111,7 +111,19 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 				
 			</div>
 			<div data-options="region:'center'" style="width:35%">
-
+				<table id="dg" title="Banks" class="easyui-datagrid" style="width:100%;height:100%"
+					url="phpfiles/get_data_no_params.php?sql_query=GetBankAccounts()" 
+					toolbar="#toolbar" fitColumns="true" singleSelect="true">
+					<thead>
+						<tr>
+							<th field="BAID" width="1" hidden="true">BAID</th>
+							<th field="BID" width="1" hidden="true">BID</th>
+							<th field="BankSymbol" width="30%">Bank Symbol</th>							
+							<th field="AccountType" width="30%">Account Type</th>							
+							<th field="CurrentBalance" width="30%"  align="right"  formatter="formatPrice">Current Balance</th>
+						</tr>
+					</thead>
+				</table>
 			</div>
 		</div>
     </div>
